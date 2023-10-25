@@ -1,0 +1,41 @@
+class Complex {
+    // Instance variables for real and imaginary parts of the complex number
+    double real;
+    double image;
+
+    // Instance method to add another Complex number to this instance
+    void add(Complex num) {
+        this.real += num.real;
+        this.image += num.image;
+    }
+
+    // Instance method to subtract another Complex number from this instance
+    void subtract(Complex num) {
+        this.real -= num.real;
+        this.image -= num.image;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Complex number = new Complex();
+        number.real = 10;
+        number.image = 4;
+        // math expression of number = 10.0 + 4.0i
+
+        Complex anotherNumber = new Complex();
+        anotherNumber.real = 6;
+        anotherNumber.image = 6;
+        // math expression of anotherNumber = 6.0 + 6.0i
+
+        number.add(anotherNumber);
+        System.out.println("After adding: " + number.real + " + " + number.image + "i");
+
+        // Resetting the values for demonstration purposes
+        number.real = 10;
+        number.image = 4;
+
+        number.subtract(anotherNumber);
+        System.out.println("After subtracting: " + number.real + " + " + number.image + "i");
+    }
+}
