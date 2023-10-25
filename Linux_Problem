@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+main_menu="
+------------------------------
+| Hyper Commander            |
+| 0: Exit                    |
+| 1: OS info                 |
+| 2: User info               |
+| 3: File and Dir operations |
+| 4: Find Executables        |
+------------------------------"
+
+
+# main project part
+
+echo Hello $USER!
+
+while :
+do
+  echo -e "$main_menu"
+  read opt
+
+  case $opt in
+    0)
+      echo Farewell!
+      exit 0
+      ;;
+    1)
+      uname -no
+      ;;
+    2)
+      whoami
+      ;;
+    [3-4])
+      echo Not implemented!
+      ;;
+    *)
+      echo Invalid option!
+      ;;
+  esac
+done # main 'while' loop
