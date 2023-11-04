@@ -1,0 +1,80 @@
+Problem: Page Layout
+When browsing the internet, you come across a lot of different layouts, each with a unique style.
+To master the art of making amazing layouts, we must practice a lot.
+Your task here is to make a layout similar to the image below.
+The page has three rows and three columns where header and footer are stretched to full width and content has two bars on the sides
+Here's what you should do:
+1.Add the corresponding classes to each div in the HTML code (the order matters).
+2.These are the classes that you need to add to the elements: left-bar, main-content and right-bar.
+3.Do not remove the mid-element class from the three middle divs.
+4.Add the specific classes to the three middle elements, use space to separate each class.
+5.Use float and clear to position the elements.
+
+ HTML Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Layout</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Header</div>
+    <div class="left-bar mid-element">Left Bar</div>
+    <div class="main-content mid-element">Main Content</div>
+    <div class="right-bar mid-element">Right Bar</div>
+    <div class="footer">Footer</div>
+</div>
+</body>
+</html>
+
+CSS Code:
+.container {
+  color: aliceblue;
+  width: 40%;
+}
+
+.header, .footer {
+  background-color: rgb(96, 96, 212);
+  border: 1px solid black;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.mid-element {
+  background-color: rgb(185, 67, 67);
+  border: 1px solid black;
+  font-size: 16px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.main-content {
+  margin-left: 7%;
+  width: 35%;
+}
+
+.right-bar, .left-bar {
+  width: 25%;
+}
+
+/* Only change code below this line */
+.left-bar {
+    float: left; /* Add float to the left-bar */
+}
+
+.main-content {
+    float: left; /* Ensure main-content is also floated left */
+}
+
+.right-bar {
+    float: right; /* Already correct, float the right-bar to the right */
+}
+
+.footer {
+    clear: both; /* Clear both sides to ensure the footer is below the floated elements */
+}
